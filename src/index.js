@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// import the react-router component
+import { BrowserRouter as Router } from "react-router-dom";
+
 // import redux createStore 
 import { createStore } from 'redux';
 
@@ -27,7 +30,9 @@ const store = createStore(
 // to make store available in the app
 ReactDOM.render(
   <Provider store={ store }>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>, 
   document.getElementById('root')
 );
