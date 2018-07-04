@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import { Link } from "react-router-dom";
+
 import Team from './Team'
 
 // Fisher–Yates algorithm to shuffle array
@@ -45,7 +47,9 @@ class Teams extends Component {
             <Team team={ team2 }>Team 2</Team>
 					</div>
 					:
-					<p className='alert alert-warning text-center' role='alert'>No players found</p>
+					<p className='alert alert-warning text-center' role='alert'>
+            No players found <Link to='/players/add'>add some players</Link> to get started
+          </p>
 				}
 			</Fragment>
 		);

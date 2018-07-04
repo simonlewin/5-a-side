@@ -27,10 +27,10 @@ class Add extends Component {
 	render() {
 		return (
 			<Fragment>
-				<form onSubmit={this.onSubmit} className='input-group mb-3'>
+				<form onSubmit={this.onSubmit} className='input-group input-group-lg mb-3'>
 					<input 
 						className='form-control'
-						placeholder='Enter player name' 
+						placeholder='Player name' 
 						onChange={this.handleChange} 
 						value={this.state.value} 
 					/>
