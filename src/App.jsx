@@ -1,17 +1,26 @@
 import React, { Fragment } from 'react';
 
-import Header from './components/Header';
+import { Route, Switch, Link } from 'react-router-dom';
 
-import Add from './containers/Add'
+import Header from './components/Header';
+import FourOhFour from './components/FourOhFour';
+
 import Players from './containers/Players'
+import Add from './containers/Add'
 import Teams from './containers/Teams'
 
 const App = () => (
   <Fragment>
     <Header>Team Picker</Header>
-    <Add />
+
     <Players />
-    <Teams />
+
+    {/* <Switch>
+      <Route exact path='/' component= { Teams } />
+      <Route exact path='/players/add' component= { Add } />
+      <Route exact path='/players' component= { Players } />
+      <Route component={ FourOhFour } />
+    </Switch> */}
   </Fragment>
 );
 
