@@ -1,3 +1,4 @@
+// the initial state - a list of players
 const initial = {
   players: [],
 };

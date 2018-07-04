@@ -4,6 +4,8 @@ import { addPlayer } from "../data/actions/state";
 
 import Add from "../components/Add";
 
+// map dispatch to props gets given store's dispatch method as the first argument
+// and returns an object which gets passed in as props to the wrapped component
 const mapDispatchToProps = dispatch => {
   return {
     onSubmit: data => {
