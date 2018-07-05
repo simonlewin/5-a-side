@@ -19,7 +19,7 @@ const Players = ({ players }) => (
           { players.length >= 4
             ? (players.length % 2 === 0 
               ? <Link to='/teams' className='btn btn-outline-secondary float-right'>Pick Teams</Link>
-              : <Link to='/teams' className='btn btn-outline-secondary float-right' disabled>Pick Teams</Link> )
+              : <Link to='/teams' className='btn btn-outline-secondary float-right disabled'>Pick Teams</Link> )
             : null
           }
         </h4>
