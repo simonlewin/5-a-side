@@ -15,16 +15,22 @@ class Add extends Component {
 
 	handleChange(e) {
 		let value = e.target.value;
-		this.setState({value: value, invalid: false});
+		this.setState({
+			value: value, 
+			invalid: false,
+		});
 	}
 
 	onSubmit(e) {
 		e.preventDefault();
 
+		// regex to test for valid player name characters and spaces only
 		const re = /^[a-zA-Z][(a-zA-Z)\u0020]+$/;		
 		const data = this.state.value;
 
+		// test player name is valid and between 2 and 30 characters
 		if (re.test(data) && data.length > 1 && data.length < 31) {
+			// submit dummy player rating
 			this.props.onSubmit({name: data, rating: 0});
 			this.setState({value: ''});
 		} else {
@@ -33,6 +39,7 @@ class Add extends Component {
 	}
 
 	render() {
+		// stop add button being used if controller component input is empty
 		const disabled = this.state.value.length === 0;
 		const { invalid } = this.state;
 
@@ -47,7 +54,7 @@ class Add extends Component {
 						value={this.state.value} 
 					/>
 					<div className='input-group-append'>
-						{/* if input is invalid disable button with disabled={true} */}
+						{/* button disabled if input is invalid or set disabled */}
 						<button className='btn btn-outline-primary rounded-right' disabled={ disabled || invalid }>Add</button>
 					</div>
 					<div className='invalid-feedback'>

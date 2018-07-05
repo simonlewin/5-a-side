@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-// List players component
+// Component to list players and render delete button
 const PlayerList = ({ players, onClick }) => (
   <Fragment>
     <ul className='list-group'>
@@ -9,9 +9,10 @@ const PlayerList = ({ players, onClick }) => (
           { player.name }
           <button
             onClick={ e => onClick(e, player.id) }
-            className='btn btn-outline-danger btn-sm float-right p-1'>
-              Delete
-            </button>     
+            className='btn btn-outline-danger btn-sm float-right p-1'
+          >
+            Delete
+          </button>     
         </li>
 			))}
     </ul>
