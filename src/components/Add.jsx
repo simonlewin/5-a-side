@@ -25,17 +25,21 @@ class Add extends Component {
 	}
 
 	render() {
+		const valid = false;
 		return (
 			<Fragment>
-				<form onSubmit={this.onSubmit} className='input-group input-group-lg mb-3'>
+				<form onSubmit={this.onSubmit} className='input-group input-group-lg mb-3'> 
 					<input 
-						className='form-control'
+						className={`form-control ${ valid ? '' : 'is-invalid' }`}
 						placeholder='Player name' 
 						onChange={this.handleChange} 
 						value={this.state.value} 
 					/>
 					<div className='input-group-append'>
-						<button className='btn btn-outline-primary'>Add</button>
+						<button className='btn btn-outline-primary rounded-right' disabled={!valid}>Add</button>
+					</div>
+					<div class='invalid-feedback'>
+						Please enter a valid player name
 					</div>
 				</form>
 			</Fragment>
