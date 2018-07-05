@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Add from '../containers/Add';
 import PlayerList from '../containers/PlayerList';
 
@@ -16,8 +18,8 @@ const Players = ({ players }) => (
           {/* if there's an odd number of players disable button */}
           { players.length >= 4
             ? (players.length % 2 === 0 
-              ? <button className='btn btn-outline-secondary float-right'>Pick Teams</button>
-              : <button className='btn btn-outline-secondary float-right' disabled>Pick Teams</button> )
+              ? <Link to='/teams' className='btn btn-outline-secondary float-right'>Pick Teams</Link>
+              : <Link to='/teams' className='btn btn-outline-secondary float-right' disabled>Pick Teams</Link> )
             : null
           }
         </h4>

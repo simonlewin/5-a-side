@@ -48,7 +48,7 @@ class Teams extends Component {
 					</div>
 					:
 					<p className='alert alert-warning text-center' role='alert'>
-            No players found <Link to='/players/add'>add some players</Link> to get started
+            No players found <Link to='/'>add some players</Link> to get started
           </p>
 				}
 			</Fragment>
