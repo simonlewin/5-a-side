@@ -8,7 +8,7 @@ const PlayerList = ({ players, onClick }) => (
         <li className='list-group-item list-group-item-action py-2' key={ i }>
           { player.name }
           <button
-            // onClick={ onClick(player.id) }
+            onClick={ e => onClick(e, player.id) }
             className='btn btn-outline-danger btn-sm float-right p-1'>
               Delete
             </button>     

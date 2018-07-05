@@ -6,8 +6,8 @@ import PlayerList from "../components/PlayerList";
 
 // map dispatch to props gets given store's dispatch method as the first argument
 // again, we return an object which gets passed in as props to the wrapped component
-const mapDispatchToProps = (dispatch, { id }) => ({
-  onClick: () => {
+const mapDispatchToProps = dispatch => ({
+  onClick: (e, id) => {
     dispatch(removePlayer(id));
   }
 });
