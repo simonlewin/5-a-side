@@ -9,3 +9,8 @@ export const removePlayer = id => ({
   type: 'removePlayer',
   id: id,
 });
+
+// reset players action
+export const resetPlayers = id => ({
+  type: 'resetPlayers',
+});

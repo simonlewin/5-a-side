@@ -41,11 +41,15 @@ class Teams extends Component {
 		return (
 			<Fragment>
 				{ /* check there are players to show otherwise show warning */ }
-				{ players.length ?
-					<div className='row'>
-            <Team team={ team1 }>Team 1</Team>
-            <Team team={ team2 }>Team 2</Team>
-					</div>
+        { players.length ?
+          <Fragment>
+            <div className='row'>
+              <Team team={ team1 }>Team 1</Team>
+              <Team team={ team2 }>Team 2</Team>
+            </div>
+            <Link to='/teams' className='btn btn-outline-primary float-right my-3'>Pick Again</Link>
+            <Link to='/' className='btn btn-outline-warning float-right m-3'>Edit Players</Link>
+          </Fragment>
 					:
 					<p className='alert alert-warning text-center' role='alert'>
             No players found - to get started <Link to='/'>add some players</Link>

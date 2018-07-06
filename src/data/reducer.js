@@ -17,11 +17,20 @@ const removePlayer = (state, { id }) => {
   };
 };
 
+// reset players
+const resetPlayers = (state) => {
+  return {
+    ...state,
+    players: [],
+  };
+};
+
 // reducer returns a new state object 
 const reducer = (state, action) => {
   switch (action.type) {
     case "addPlayer": return addPlayer(state, action);
     case "removePlayer": return removePlayer(state, action);
+    case "resetPlayers": return resetPlayers(state, action);
     default: return state;
   }
 };

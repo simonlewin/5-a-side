@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { removePlayer } from "../data/actions/state";
+import { removePlayer, resetPlayers } from "../data/actions/state";
 
 import PlayerList from "../components/PlayerList";
 
@@ -9,6 +9,9 @@ import PlayerList from "../components/PlayerList";
 const mapDispatchToProps = dispatch => ({
   onClick: (e, id) => {
     dispatch(removePlayer(id));
+  },
+  onClickReset: () => {
+    dispatch(resetPlayers());
   }
 });
 
