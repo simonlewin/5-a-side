@@ -1,6 +1,7 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import Players from "../components/Players";
+// import Players component
+import Players from '../components/Players';
 
 // mapStateToProps is passed in the current state
 // and returns an object, which gets passed in as props to 

@@ -1,8 +1,8 @@
 // add new player to list of players
-// create id property using length of array
+// add player id property using max id already in array + 1 or 0 if empty
 const addPlayer = (state, { player }) => {
   player.id = state.players.length ? Math.max(...state.players.map(el => el.id)) + 1 : 0;
-  // player.id = state.players.length;
+
   return {
     ...state,
     players: state.players.concat([player]),
@@ -10,6 +10,7 @@ const addPlayer = (state, { player }) => {
 };
 
 // remove player with id = id from list of players
+// return a filtered array with the object with the matching id removed 
 const removePlayer = (state, { id }) => {
   return {
     ...state,
@@ -18,6 +19,7 @@ const removePlayer = (state, { id }) => {
 };
 
 // reset players
+// return the initial state
 const resetPlayers = (state) => {
   return {
     ...state,
@@ -25,7 +27,7 @@ const resetPlayers = (state) => {
   };
 };
 
-// reducer returns a new state object 
+// reducer returns a new state object based on the action type
 const reducer = (state, action) => {
   switch (action.type) {
     case "addPlayer": return addPlayer(state, action);
@@ -35,4 +37,4 @@ const reducer = (state, action) => {
   }
 };
 
-export default reducer
+export default reducer;

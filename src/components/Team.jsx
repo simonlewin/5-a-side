@@ -1,7 +1,7 @@
 import React from 'react';
 
-// a simple <Team> component to render a team name
-// and a list of players from an array of player objects
+// team component to render a team name a single list of 
+// players from an array of player objects
 const Team = ({ children, team }) => (
   <div className='col'>
 		<h4 className='text-center'>

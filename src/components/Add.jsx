@@ -1,9 +1,12 @@
 import React, {Component, Fragment} from 'react';
 
+// add players component
 class Add extends Component {
 	constructor(props) {
 		super(props);
 
+		// initial state for controlled component and 
+		// whether input it valid
 		this.state = {
 			value: '',
 			invalid: false,
@@ -13,6 +16,7 @@ class Add extends Component {
 		this.onSubmit = this.onSubmit.bind(this);
 	}
 
+	// handle user input to controlled component
 	handleChange(e) {
 		let value = e.target.value;
 		this.setState({
@@ -21,15 +25,19 @@ class Add extends Component {
 		});
 	}
 
+	// onSubmit event handler 
 	onSubmit(e) {
 		e.preventDefault();
 
-		// regex to test for valid player name characters and spaces only
+		// regex to test for valid player name - characters and spaces only
+		// limited test because it doesn't allow hyphens, apostrophes or commas
+		// and it allows multiple spaces
 		const re = /^[a-zA-Z][(a-zA-Z)\u0020]+$/;		
 		const data = this.state.value;
 
-		// test player name is valid and between 2 and 30 characters
-		if (re.test(data) && data.length > 1 && data.length < 31) {
+		// if player name is valid and between 2 and 30 characters then submit
+		// otherwise set invalid flag
+		if (re.test(data) && data.length >= 2 && data.length <= 30) {
 			// submit dummy player rating
 			this.props.onSubmit({name: data, rating: 0});
 			this.setState({value: ''});
@@ -54,7 +62,7 @@ class Add extends Component {
 						value={this.state.value} 
 					/>
 					<div className='input-group-append'>
-						{/* button disabled if input is invalid or set disabled */}
+						{/* button disabled if input is invalid or set to disabled */}
 						<button className='btn btn-outline-primary rounded-right' disabled={ disabled || invalid }>Add</button>
 					</div>
 					<div className='invalid-feedback'>

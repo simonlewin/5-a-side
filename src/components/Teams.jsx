@@ -1,20 +1,21 @@
 import React, { Component, Fragment } from 'react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
+// import single team list component
 import Team from './Team'
 
-// Fisher–Yates algorithm to shuffle array
+// Fisher–Yates algorithm to shuffle copy of player array
 const shuffle = array => {
   let m = array.length, t, i;
 
-  // while there remain elements to shuffle…
+  // while there remain elements to shuffle
   while (m) {
 
-      // pick a remaining element…
+      // pick a remaining element
       i = Math.floor(Math.random() * m--);
   
-      // and swap it with the current element.
+      // and swap it with the current element
       t = array[m];
       array[m] = array[i];
       array[i] = t;
@@ -22,7 +23,7 @@ const shuffle = array => {
   return array;
 }
 
-// shows teams - two lists of players
+// teams componewnt renders two lists of player names
 class Teams extends Component {
 	render () {
     const { players } = this.props;
@@ -34,7 +35,7 @@ class Teams extends Component {
     let shuffled = shuffle(copy);
     let l = shuffled.length;
 
-    // slice the array into two equal parts 
+    // slice the array into two halves using array length 
     let team1 = shuffled.slice(0, l / 2);
     let team2 = shuffled.slice(l / 2 , l);
 

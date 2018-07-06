@@ -1,11 +1,13 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import { addPlayer } from "../data/actions/state";
+import { addPlayer } from '../data/actions/state';
 
-import Add from "../components/Add";
+// import Add component
+import Add from '../components/Add';
 
-// map dispatch to props gets given store's dispatch method as the first argument
+// mapDispatchToProps gets given store's dispatch method as the first argument
 // and returns an object which gets passed in as props to the wrapped component
+// for Add player action
 const mapDispatchToProps = dispatch => {
   return {
     onSubmit: data => {

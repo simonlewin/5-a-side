@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-// a simple 404 page not found component
+// a simple 404 'page not found' component
 // with a link to the home page
 const FourOhFour = () => (
   <Fragment>

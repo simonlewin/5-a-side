@@ -1,13 +1,15 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import { removePlayer, resetPlayers } from "../data/actions/state";
+import { removePlayer, resetPlayers } from '../data/actions/state';
 
-import PlayerList from "../components/PlayerList";
+// import PlayerList component
+import PlayerList from '../components/PlayerList';
 
-// map dispatch to props gets given store's dispatch method as the first argument
-// again, we return an object which gets passed in as props to the wrapped component
+// mapDispatchtoProps gets given store's dispatch method as the first argument
+// and returns an object which gets passed in as props to the wrapped component
+// one for Delete dispatch action and one for Reset dispatch action
 const mapDispatchToProps = dispatch => ({
-  onClick: (e, id) => {
+  onClickDelete: (e, id) => {
     dispatch(removePlayer(id));
   },
   onClickReset: () => {
@@ -15,9 +17,8 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-// mapStateToProps is passed in the current state
-// and returns an object, which gets passed in as props to 
-// the connected component
+// mapStateToProps is passed in the current state and returns an object, 
+// which gets passed in as props to the connected component
 const mapStateToProps = state => ({
   players: state.players,
 });

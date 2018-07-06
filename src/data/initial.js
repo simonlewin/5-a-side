@@ -1,6 +1,7 @@
-// the initial state - a list of players
+// the initial state - an object containing
+// an array player objects
 const initial = {
   players: [],
 };
 
-export default initial
+export default initial;
