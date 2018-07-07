@@ -19,6 +19,8 @@ import { Provider } from 'react-redux';
 // left over from create-react-aspp bootstrap
 import registerServiceWorker from './registerServiceWorker';
 
+import './css/styles.css';
+
 // create redux store, pass it reducer and initial state
 // link up Redux Dev Tools
 const store = createStore(
